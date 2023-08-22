@@ -1,0 +1,143 @@
+extends ../layouts/default
+
+mixin post(post)
+	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
+		h2: a(href='/blog/post/' + post.slug)= post.title
+		p.lead.text-muted Posted 
+			if post.publishedDate
+				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
+			if post.categories && post.categories.length
+				| in 
+				each cat, i in post.categories
+					a(href='/blog/' + cat.key)= cat.name
+					if i < post.categories.length - 1
+						| , 
+					else
+						|  
+			if post.author
+				| by #{post.author.name.first}
+		if post.image.exists
+			img(src=post._.image.fit(160,160)).img.pull-right
+		p!= post.content.brief
+		if post.content.extended
+			p.read-more: a(href='/blog/post/' + post.slug) Read more...
+
+	block intro
+		.header
+			.blog-background
+				h1.blog-title= data.category ? data.category.name : 'Creative Blog'
+				.burger-menu(type="button" id="burger-menu" values="")
+					include ../views/components/navbar
+				.blog-search
+					form.search-block(action="user.js" method="POST" name="search")
+						input.search-pole(type='text', name='subscribe', placeholder='Search here', value='')
+						.search-submit
+							input.search-here(type="submit" name="submit" value="")
+	block content
+		.content-wrapper
+			.slider
+				.slide
+					img.slide-image(src='https://via.placeholder.com/1150X320')
+				.slide
+					img.slide-image(src='https://via.placeholder.com/1150X320')
+				.slide
+					img.slide-image(src='https://via.placeholder.com/1150X320')
+			.user-content
+				.user-wall
+					//div=JSON.stringify(data.posts.results)
+					if data.posts.results.length
+						each post, index in data.posts.results
+							div(class="post-main post-item-" + index + " " + post.size)
+								if post.image.exists
+									img.post-img(src=post.image.url)
+								else
+									img.post-img(src='/images/girl.png')
+								.post-date
+									span.date=post._.publishedDate.format('DD')
+									span.date=post._.publishedDate.format('MMM')
+								.blog-post-data
+									.general-data
+										span.publish-data=post._.publishedDate.format('MMMM Do YYYY')
+										span.separator |
+										span.publish-data Lifystyle
+									.author-data
+										.data-sector
+											img.author-photo(src='/images/author-photo.png')
+											span.status Author
+											span.separator |
+											a.autor-link(href='#')=post.author.name.first +' '+ post.author.name.last
+										.data-sector
+											a.comments-link(href='#') Comments
+											span.separator |
+											a.changing-data(href='#') 215
+										.data-sector
+											span.text-data Share
+											span.separator |
+											ul.share-here
+												li.share-media
+													a.link-to-share(href='#')
+														img.share-post(src='/images/facebook_blue.png')
+												li.share-media
+													a.link-to-share(href='#')
+														img.share-post(src='/images/twitter_blue.png')
+												li.share-media
+													a.link-to-share(href='#')
+														img.share-post(src='/images/goggle_blue.png')
+								h3.new-post-title=post.title
+								a.button(href='/blog/post/' + post.slug) Read
+					
+					//.col-sm-8.col-md-9
+						if filters.category && !data.category
+							h3.text-muted Invalid Category.
+						else
+							if data.posts.results.length
+								if data.posts.totalPages > 1
+									h4.text-weight-normal Showing 
+										strong #{data.posts.first}
+										|  to 
+										strong #{data.posts.last}
+										|  of 
+										strong #{data.posts.total}
+										|  posts.
+								else
+									h4.text-weight-normal Showing #{utils.plural(data.posts.results.length, '* post')}.
+								.blog
+									each post in data.posts.results
+										+post(post)
+								
+								if data.posts.totalPages > 1
+									ul.pagination
+										if data.posts.previous
+											li: a(href='?page=' + data.posts.previous): span.glyphicon.glyphicon-chevron-left
+										else
+											li.disabled: a(href='?page=' + 1): span.glyphicon.glyphicon-chevron-left
+										each p, i in data.posts.pages
+											li(class=data.posts.currentPage == p ? 'active' : null)
+												a(href='?page=' + (p == '...' ? (i ? data.posts.totalPages : 1) : p ))= p
+										if data.posts.next
+											li: a(href='?page=' + data.posts.next): span.glyphicon.glyphicon-chevron-right
+										else
+											li.disabled: a(href='?page=' + data.posts.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
+					//if data.categories.length
+						.col-sm-4.col-md-3		
+					
+					ul.pagecounter
+						li.page
+							a.page-link(href='#') 1
+						li.page
+							a.page-link(href='#') 2
+						li.page
+							a.page-link(href='#') 3
+						li.page
+							a.page-link(href='#') .....
+						li.page
+							a.page-link(href='#') 10
+						li.page
+							a.page-link(href='#') >>
+									
+					//.list-group(style='margin-top: 70px;')
+						a(href='/blog', class=!data.category ? 'active' : false).list-group-item All Categories
+						each cat in data.categories
+							a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+				include ../views/components/navigation
+		include ../views/components/footer

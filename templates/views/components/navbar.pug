@@ -1,0 +1,9 @@
+ul.nav.navbar-nav.navbar-left(id="navbar")
+    each link in navLinks
+        li.nav-button(class=(section == link.key ? 'active' : null)): a.nav-link(href=link.href)= link.label
+    if user
+        if user.canAccessKeystone
+            li.nav-button: a.nav-link(href='/keystone') Open Keystone
+        li.nav-button: a.nav-link(href='/keystone/signout') Sign Out
+    else
+        li.nav-button: a.nav-link(href='/keystone/signin') Sign In

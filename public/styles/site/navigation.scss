@@ -1,0 +1,149 @@
+.blog-navigation{
+    width: 27%;
+    float: left;
+    margin: 0 0 20px 0;
+    .search{
+        position: relative;
+        width: 100%;
+        float: left;
+        background-color: white;
+        border: 1px solid #e0dfdf;
+        color: #e0dfdf;
+        .search-area{
+            border: none;
+            padding: 10px;
+            margin: 0;
+            width: 85%;
+        }
+        .submit-button{
+            background-color: #ea4c89;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 15%;
+            content: "-";
+            .search-btn{
+                background: url(../images/search.png) no-repeat center center;
+                width: 100%;
+                height: 100%;
+                float: left;
+                border: none;
+            }
+        }
+    }
+    .navigation-block{
+        width: 100%;
+        float: left;
+        margin: 20px 0 0 0;
+        .navigation-title{
+            font-size: 100%;
+            float: left;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: white;
+            border: 1px solid #e0dfdf;
+            border-bottom: none;
+            margin: 0;
+        }
+        .recent-post{
+            background-color: white;
+            border: 1px solid #e0dfdf;
+            float: left;
+            .recent-img{
+                width: 100%;
+                float: left;
+                padding: 10px 10px 0 10px;
+            }
+            .recent-title{
+                font-size: 100%;
+                text-align: left;
+                padding-left: 10px;
+                font-weight: bold;
+                font-weight: bold;
+            }
+        }
+        .post-tags{
+            width: 100%;
+            float: left;
+            background-color: white;
+            border: 1px solid #e0dfdf;
+            padding: 30px 30px 90px 30px;
+            .tags{
+                list-style: none;
+                .tag-link{
+                    border: 1px solid #e0dfdf;
+                    padding: 1px 5px;
+                    float: left;
+                    margin: 2px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+        .categories{
+            width: 100%;
+            float: left;
+            background-color: white;
+            border: 1px solid #e0dfdf;
+            padding: 30px;
+            .category{
+                width: 100%;
+                float: left;
+                list-style: none;
+                margin: 5px 0;
+                padding: 5px;
+                border: 1px solid #e0dfdf;
+                cursor: pointer;
+                background: #ea4c89;
+                text-align: center;
+                .category-link{
+                    width: 100%;
+                    float: left;
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+        .subscribe-form{
+            float: left;
+            background-color: white;
+            border: 1px solid #e0dfdf;
+            .subscribe-email{
+            margin: 20px 20px 30px 20px;
+            width: 80%;
+            float: left;
+            color: #e0dfdf;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 1px solid #e0dfdf;
+            text-align: center;
+            }
+            .subscribe{
+                width: 100%;
+                float: left;
+                display: flex;
+                justify-content: center;
+                .subscribe-button{
+                    cursor: pointer;
+                    background-color: #ea4c89;
+                    color: white;
+                    border: none;
+                    padding: 15px;
+                    font-weight: bold;
+                    width: 150px;
+                    margin: 20px 0;
+
+                }
+            }
+        }
+    }
+}
+.recent{
+    color: red;
+    font-weight: bold;
+    margin: 0 0 0 10px;
+}

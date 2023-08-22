@@ -1,0 +1,60 @@
+.home-header{
+    width: 100%;
+    float: left;
+    .user-background{
+        float: left;
+        width: 100%;
+        position: relative;
+        .home-background{
+            width: 100%;
+            float: left;
+        }
+        .user-name{
+            position: absolute;
+            top: 400px;
+            left: 530px;
+            color: white;
+            font-size: 100px;
+        }
+        .user-image{
+            width: 100%;
+            float: left;
+            margin: -150px auto;
+            display: flex;
+            justify-content: center;
+            .user-img{
+                border-radius: 50%;
+                padding: 5px;
+                background-color: white;
+            }
+        }
+    }
+    .user-info{
+        float: left;
+        width: 100%;
+        margin: 150px auto;
+        margin-bottom: 50px;
+        text-align: center;
+        
+        .user-status{
+            margin: 7px;
+        }
+        .user-email{
+            margin: 7px;
+        }
+        .user-contact{
+            width: 100%;
+            float: left;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            .social-contact{
+                list-style: none;
+                float: left;
+                .social-media{
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

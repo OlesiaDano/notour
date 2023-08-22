@@ -1,0 +1,284 @@
+.logo{
+    background: url(../images/logo.png) no-repeat top left;
+    width: 80px;
+    height: 36px;
+    float: left;
+    margin: 30px 78px;
+}
+.burger-menu{
+    &.post{
+        top: 15px;
+    }
+}
+.home-background{
+    width: 100%;
+    float: left;
+    margin: 40px 0 0 0;
+}
+.content-wrapper{
+    background: none;
+}
+.post-title{
+    font-weight: bold;
+}
+.data-sector.for-comment{
+    width: 10%;
+    float: left;
+    .author-photo{
+        margin: 10px 0 80px 0;
+        width: 50px;
+        height: 50px;
+    }
+}
+.social-media{
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    float: left;
+    margin: 20px 0;
+    padding: 30px 0;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    .social{
+        width: 170px;
+        border-radius: 3px;
+        float: left;
+        margin: 0 10px;
+        .social-link{
+            width: 100%;
+            text-decoration: none;
+            float: left;
+            color: white;
+            text-align: center;
+            display: flex;
+            .social-icon{
+                float: left;
+                padding: 5px;
+                border-right: 1px solid white;
+            }
+            .social-button{
+                justify-self: center;
+                align-self: center;
+                margin: 0 5px;
+            }
+        }
+    }
+    .social:first-child{
+        margin: 0;
+    }
+    .facebook{
+        background-color: #60759e;
+    }
+    .gplus{
+        background-color: #ca4536;
+    }
+    .twitter{
+        background-color: #00acee;
+    }
+    .whatsapp{
+        background-color: #40c229;
+    }
+}
+.letter{
+    float: left;
+    width: 0.7em;
+    font-size: 400%;
+    font-family: algerian, courier;
+    line-height: 80%;
+}
+.post{
+    border: none!important;
+    .post-text{
+        width: 100%;
+        float: left;
+        .text{
+            float: left;
+        }
+        .post-ilustration{
+            float: left;
+            width: 60%;
+            padding: 10px;
+            .ilustration-image{
+                width: 100%;
+                float: left;
+            }
+            .image-data{
+                width: 100%;
+                float: left;
+                padding: 20px;
+                border: 2px outset #f1f1f1;
+                .image-description{
+                    float: left;
+                    font-weight: bold;
+                }
+                .ilustation-label{
+                    float: left;
+                    font-style: italic;
+                    color: #cdcecf;
+                }
+            }
+        }
+        .post-extract{
+            width: 100%;
+            float: left;
+            text-align: center;
+            .extract-title{
+                width: 100%;
+                float: left;
+                font-weight: bold;
+            }
+            .extract-label{
+                width: 100%;
+                float: left;
+                color: #abaeaf;
+                font-size: 150%;
+            }
+        }
+    }
+}
+.line-separator{
+    width: 100%;
+    height: 2px;
+    background: #f1f2f2;
+    margin: 5px 5px;
+    float: left;
+}
+.blog-tags{
+    width: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0 65px 0;
+    border-bottom: 1px solid #f1f2f2;
+    .tag{
+        margin: 0 10px;
+        border: 1px solid #abaeaf;
+        float: left;
+        list-style: none;
+        padding: 5px 20px;
+        text-align: center;
+        .tag-name{
+            text-decoration: none;
+            color: #abaeaf;
+        }
+    }
+}
+.comment-data{
+    display: flex;
+    width: 90%;
+    float: left;
+    .comment{
+        margin: 0 5px;
+    }
+    .comment.name{
+        float: left;
+        font-weight: bold;
+        margin-left: 0;
+    }
+    .comment.separator{
+        float: left;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background: #abaeaf;
+        padding: 2px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+    .comment.status{
+        float: left;
+        color: #abaeaf;
+    }
+}
+.comment-block{
+    width: 100%;
+    float: left;
+    .comment-title{
+        margin: 20px 0;
+        font-weight: bold;
+        float: left;
+        width: 100%;
+    }
+    .insert-comment{
+        width: 100%;
+        float: left;
+        .data-sector{
+            width: 10%;
+            float: left;
+            .author-photo{
+                margin: 10px 0 80px 0;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        .comment-input{
+            width: 90%;
+            float: left;
+            .comment-input{
+                width: 100%;
+                height: 100px;
+                border: 2px solid #f1f2f2;
+                border-radius: 3px;
+            }
+            .comment-submit{
+                width: 100px;
+                padding: 10px 20px;
+                border: 2px solid #f1f2f2;
+                float: right;
+                background: white;
+                margin: 10px 0 10px 0;
+                border-radius: 3px;
+            }
+        }
+    }
+    .last-comment{
+        width: 100%;
+        float: left;
+        border-bottom: 1px solid #f1f2f2;
+        border-top: 1px solid #f1f2f2;
+        padding: 40px;
+        .comment-text{
+            width: 90%;
+            float: left;
+            color: #909292;
+            margin: 20px 0;
+        }
+        .comment-navigation{
+            width: 90%;
+            float: left;
+            .navigation{
+                margin: 0 5px;
+                float: left;
+                text-decoration: none;
+                color: #909292;
+                padding: 5px;
+            }
+            .arrow{
+                padding: 15px;
+                float: left;
+                border: none;
+                &.previous{
+                    background: url(../images/up.png) no-repeat center center;
+                }
+                &.next{
+                    background: url(../images/down.png) no-repeat center center;
+                }
+            }
+            .horizon-separator{
+                color: #e0dfdf;
+            }
+            .reply{
+                margin-left: 30px;
+            }
+            .share-button{
+                background: url(../images/right.png) no-repeat center right;
+                padding: 5px 15px
+
+            }
+        }
+    }
+    .before-comment{
+        margin-left: 50px;
+    }
+}    

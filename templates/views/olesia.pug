@@ -1,0 +1,85 @@
+extends ../layouts/default
+
+block content
+    .container.olesia
+        h1.heading Olesia
+        .wrapper
+            - for (var x = 1; x <= 16; x++)
+                div(class='box box-' + x) Box #{x}
+
+        a(href='//google.com') Google
+        |
+        |
+        a(class='button' href='//google.com') Google
+        |
+        |
+        a(class='button', href='//google.com') Google
+
+
+        p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia quia molestias dolor modi aliquam nulla repellat eius nam? Soluta, reiciendis.
+        p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam a ea laborum molestias cum rem repudiandae cupiditate enim vitae. Corporis voluptates culpa possimus recusandae iusto pariatur doloribus ratione temporibus facilis!
+        
+        p= 'This code is <strong>not</strong> not escaped!'
+        p!= 'This code is <strong>not</strong> escaped!'
+
+        - var n = 0;
+            ul
+            while n < 4
+                li= n++
+
+
+        - var values = [3];
+            ul
+            each val in values
+                li= val
+            else
+                li There are no values
+
+        - var values = [1, 2, 3, 4];
+            ul
+            each val in values.length ? values : ['There are no values']
+                li= val
+
+        mixin pet(name)
+            li.pet= name
+        ul
+            +pet('cat')
+            +pet('dog')
+            +pet('pig')
+
+
+            p This is plain old <em>text</em> content.
+
+            html
+                body
+                p Indenting the body tag here would make no difference.
+                p HTML itself isn't whitespace-sensitive.
+
+        | You put the em
+        em pha
+        | sis on the wrong syl
+        em la
+        | ble.
+
+        a ...sentence ending with a link
+        | .
+
+        | Don't
+        |
+        button#self-destruct touch
+        |
+        | me!
+
+        p.
+        Using regular tags can help keep your lines short,
+        but interpolated tags may be easier to #[em visualize]
+        whether the tags and text are whitespace-separated.
+
+        //- var friends = 1
+        //case friends
+            when 0
+                p you have no friends
+            when 1
+                p you have a friend
+            default
+                p you have #{friends} friends   

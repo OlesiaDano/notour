@@ -1,0 +1,44 @@
+from post.pug
+
+.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+		article
+			p: a(href='/blog') &larr; back to the blog
+			hr
+			if !data.post
+			
+			else	
+
+//article
+		p: a(href='/blog') &larr; back to the blog
+		hr
+		if !data.post
+
+		else
+								.post-extract
+									h3.extract-title "Train yourself to let go of everithing you fear to lose."
+									span.extract-label Master Yoda	
+
+&.footer{
+        width: 100%;
+        background-color: #e0dfdf;
+        border: 1px solid #e0dfdf;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        .nav-button{
+            align-self: center;
+            width: 12%;
+            float: left;
+            margin: 2px 0;
+            padding: 2px!important;
+            text-align: center;
+            background-color: #e0dfdf;
+            border: 1px solid #9c9b9b;
+            .nav-link{
+                text-decoration: none;
+                color: #3146b1;
+                text-transform: initial;
+                padding: 0;
+            }
+        }
+    }

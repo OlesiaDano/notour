@@ -1,0 +1,63 @@
+extends ../layouts/default
+
+block intro
+	.container
+		
+block content
+		.container
+			.header
+				include ../views/components/home-header
+			.content-wrapper
+				.user-content
+					.user-wall
+						h1.contact-title Contact Us
+						if enquirySubmitted
+							h3 Thanks for getting in touch.
+						else
+							.col-sm-8.col-md-6
+								form(method='post')
+									input(type='hidden', name='action', value='contact')
+									.form-group(class=validationErrors.name ? 'has-error' : null)
+										label.contact-label Name
+										input.contact-input(type='text', name='name.full', value=formData['name.full']).form-control
+									.form-group(class=validationErrors.email ? 'has-error' : null)
+										label.contact-label Email
+										input.contact-input(type='email', name='email', value=formData.email).form-control
+									.form-group
+										label.contact-label Phone
+										input.contact-input(type='text', name='phone', value=formData.phone, placeholder='(optional)').form-control
+									.form-group(class=validationErrors.enquiryType ? 'has-error' : null)
+										label.contact-label.long What are you contacting us about?
+										select.select-menu(name='enquiryType').form-control
+											option(value='') (select one)
+											each type in enquiryTypes
+												option(value=type.value, selected=formData.enquiryType == type.value)= type.label
+									.form-group(class=validationErrors.message ? 'has-error' : null)
+										label.contact-label.long Message
+										textarea.contact-message(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message
+									.form-actions
+										button(type='submit').btn.btn-primary Send
+							.contact-list Find list of our specialists contacts below:
+								ul.position-contact.default-skin
+									li.name-list Ann Edwards, Head of Development (009) 556 783 91
+									li.name-list Goward Gilmoore, Head of Advertisment (009) 556 783 92
+									li.name-list Artur Reed, Head of Procurement (009) 556 783 93
+									li.name-list Jessy Howards, Press Agent (009) 556 783 94
+									li.name-list Edward Adams, Security (009) 556 783 95
+									li.name-list Marsia Lee, Business Manager (009) 556 783 96
+									li.name-list Gertruda Reinalds, SMM (009) 556 783 97
+									li.name-list Minerva Macgonagle, Head of Finance (009) 556 783 98
+									li.name-list Harry Mackdoogle, Head of Delivery (009) 556 783 98
+									li.name-list Rob Harrison, CEO (009) 556 783 99
+									li.name-list Reception (009) 556 783 90
+									li.name-list IT support (009) 556 783 89
+									li.name-list General Questions (009) 556 783 88					
+					include ../views/components/navigation
+				.map-block
+					h4.map-title Find us here:
+					.map
+						iframe.contact-map(src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d19836.785926800225!2d22.301227899999997!3d48.617917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sua!4v1598901563187!5m2!1sen!2sua" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0")
+		include ../views/components/footer
+			
+		
+				

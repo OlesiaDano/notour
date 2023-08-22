@@ -1,0 +1,208 @@
+.header{
+    float: left;
+    width: 100%;
+    position: relative;
+    margin: 20px 0 0 0;
+}
+.post-data{
+    width: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    margin-top: 10px;
+    .tag{
+        font-size: 80%;
+    }
+    .separator{
+        background-color: #e0dfdf;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin: 5px 5px;
+    }
+    .date{
+        font-size: 80%;
+    }
+}
+.user-wall{
+    width: 68%;
+    float: left;
+    margin: 10px 50px 0 0;
+    .post{
+        float: left;
+        margin: 10px 0 50px 0;
+        background-color: white;
+        border: 1px solid #e0dfdf;
+        padding: 20px;
+        position: relative;
+        .post-image{
+            width: 100%;
+            float: left;
+        }
+        .post-video{
+            width: 100%;
+            float: left;
+        }
+        .post-title{
+            float: left;
+            text-align: left;
+        }
+        .text{
+            width: 100%;
+            float: left;
+            text-align: left;
+        }
+        .post-extention{
+            width: 100%;
+            float: left;
+            margin: 35px 0 10px 0;
+            .button{
+                text-decoration: none;
+                cursor: pointer;
+                float: left;
+                background-color: #ea4c89;
+                color: white;
+                padding: 15px 40px;
+                font-weight: bold;
+            }
+            .share{
+                color: black;
+                width: 20%;
+                float: right;
+                margin: 15px 0;
+                font-weight: bold;
+                .share-link{
+                    cursor: pointer;
+                    .share-to{
+                        float: right;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+.content-wrapper{
+    width: 100%;
+    float: left;
+    background-color: #f9f9f9;
+    .user-content{
+        width: 1142px;
+        margin: 14px auto;
+    }
+}
+.post{
+    float: left;
+    margin: 0 0 50px 0;
+    background-color: white;
+    border: 1px solid #e0dfdf;
+    padding: 20px;
+    position: relative;
+    .post-image{
+        width: 100%;
+        float: left;
+    }
+    .post-video{
+        width: 100%;
+        float: left;
+    }
+    .post-title{
+        float: left;
+        text-align: left;
+    }
+    .text{
+        width: 100%;
+        float: left;
+        text-align: left;
+    }
+    .post-extention{
+        width: 100%;
+        float: left;
+        margin: 35px 0 10px 0;
+        .button{
+            text-decoration: none;
+            cursor: pointer;
+            float: left;
+            background-color: #ea4c89;
+            color: white;
+            padding: 15px 40px;
+            font-weight: bold;
+        }
+        .share{
+            color: black;
+            width: 20%;
+            float: right;
+            margin: 15px 0;
+            font-weight: bold;
+            .share-link{
+                cursor: pointer;
+                .share-to{
+                    float: right;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+.burger-menu{
+    background: url(../images/burger.png) no-repeat center center;
+    position: absolute;
+    top: 96px;
+    right: 78px;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    .burger-line{
+        position: relative;
+        margin: 5px;
+        background-color: white;
+        width: 35px;
+        height: 2px;
+        z-index: 2;
+        display: block;
+    }
+}
+.pagecounter{
+    width: 30%;
+    float: left;
+    margin: 40px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    .page{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        float: left;
+        border: 1px solid black;
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        .page-link{
+            text-decoration: none;
+            color: black;
+        }
+    }
+    .page:first-child{
+        background: #ea4c89;
+        border: 1px solid #ea4c89;
+        .page-link{
+            color: white;
+        }
+    }
+    .page:last-child{
+        background: #ea4c89;
+        border: 1px solid #ea4c89;
+        .page-link{
+            color: white;
+        }
+    }
+    .page:nth-child(4){
+        border: none;
+    }
+}
+@import "site/footer";
+@import "site/navigation";

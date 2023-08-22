@@ -1,0 +1,91 @@
+.container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    float: left;
+}
+.contact-title{
+    width: inherit!important;
+    float: left;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.col-sm-8.col-md-6{
+    width: 100%;
+    float: left;
+    background: #eeeeee;
+    padding: 20px;
+}
+.form-group{
+    width: 100%;
+    float: left;
+    .contact-label{
+        width: 20%;
+        float: left;
+        font-weight: normal;
+        &.long{
+            width: 30%;
+            float: left;
+        }
+    }
+    .contact-input{
+        width: 75%;
+        float: left;
+    }
+    .select-menu{
+        width: 65%;
+        float: left;
+    }
+    .contact-message{
+        width: 65%;
+        float: left;
+    }
+}
+.map-block{
+    float: left;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #e0dfdf;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #e0dfdf;
+    .map-title{
+        width: 100%;
+        float: left;
+        font-weight: bold;
+        color: #3146b1;
+        text-align: center;
+    }
+    .map{
+        width: 100%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        .contact-map{
+        }
+    }
+}
+.contact-list{
+    width: 100%;
+    float: left;
+    margin: 20px 0;
+    padding: 20px;
+    background: #eeeeee;
+    color: #3146b1;
+    font-weight: bold;
+    .position-contact{
+        width: 400px;
+        height: 200px;
+        margin: 20px;
+        padding: 20px;
+        font-weight: normal;
+        background: white;
+        color: grey;
+        list-style: none;
+        .name-list{
+            margin: 5px 0;
+        }
+    }
+}

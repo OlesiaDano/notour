@@ -1,0 +1,68 @@
+.blog-navigation
+    .navigation-block
+        form.search(action="user.js" method="POST" name="search")
+            input.search-area(type='search', name='search', placeholder='Search name here', value='')
+            .submit-button
+                input.search-btn(type="submit" name="submit" value="")
+    .navigation-block
+        h4.navigation-title Menu
+        include ../components/navbar
+    .navigation-block
+        h4.navigation-title Recent Post
+        .recent-post
+            img.recent-img(src='/images/mountains.png')
+            .post-data
+                p.tag.recent Mountain
+                span.separator
+                span.date 10 Apr 2016
+            h4.recent-title Dancing in the Street
+        .recent-post
+            img.recent-img(src='/images/loner.png')
+            .post-data
+                p.tag.recent Mountain
+                span.separator
+                span.date 10 Apr 2016
+            h4.recent-title Dancing in the Street
+        .recent-post
+            img.recent-img(src='/images/pier.png')
+            .post-data
+                p.tag.recent Mountain
+                span.separator
+                span.date 10 Apr 2016
+            h4.recent-title Dancing in the Street
+    if typeof data !== 'undefined' && typeof data.categories !== 'undefined' && data.categories.length
+        .navigation-block
+            h4.navigation-title Categories
+            ul.categories
+                each cat in data.categories
+                    li.category
+                        a.category-link(href='/blog/' + cat.key)=cat.name
+    .navigation-block
+        h4.navigation-title Tags
+        ul.post-tags
+            li.tags
+                a.tag-link(href='#') Blog
+            li.tags
+                a.tag-link(href='#') Personal
+            li.tags
+                a.tag-link(href='#') Funny
+            li.tags
+                a.tag-link(href='#') Project
+            li.tags
+                a.tag-link(href='#') Practice
+            li.tags
+                a.tag-link(href='#') Tag
+            li.tags
+                a.tag-link(href='#') Dribble
+            li.tags
+                a.tag-link(href='#') Behance
+            li.tags
+                a.tag-link(href='#') Photo
+            li.tags
+                a.tag-link(href='#') Color
+    .navigation-block
+        h4.navigation-title Stay in Touch
+        form.subscribe-form(action="user.js" method="POST" name="subscribe")
+            input.subscribe-email(type='text', name='subscribe', placeholder='Enter your Email' value='')
+            .subscribe
+                input.subscribe-button(type='submit' name='submit' value='Subscribe')

@@ -1,0 +1,111 @@
+extends ../layouts/default
+
+block content
+	article
+		p: a(href='/blog') &larr; back to the blog
+		hr
+		if !data.post
+
+		else
+			.header
+				.user-background
+					a.logo(href='#')
+					.burger-menu.post(type="button" id="burger-menu" values="")
+						include ../views/components/navbar
+					img.home-background(src='/images/post_banner.png')
+			.content-wrapper
+				.user-content
+					.user-wall
+						h1.post-title Luke, I'm Your Bro!
+						.data-sector
+							img.author-photo(src='/images/author-photo.png')
+						
+							if data.post.author
+								| by #{data.post.author.name.first}
+							if data.post.categories && data.post.categories.length
+								| in 
+								each cat, cat_i in data.post.categories
+									a(href='/blog/' + cat.key)= cat.name
+									if cat_i < data.post.categories.length - 1
+										| , 
+									else
+										| 
+							if data.post.publishedDate
+								| Posted #{data.post._.publishedDate.format('MMMM Do, YYYY')}  
+
+						ul.social-media
+							li.social.facebook
+								a.social-link(href='#')
+									img.social-icon(src='/images/facebook_white.png')
+									span.social-button Share on Facebook
+							li.social.gplus
+								a.social-link(href='#')
+									img.social-icon(src='/images/goggle_white.png')
+									span.social-button Share on Google +
+							li.social.twitter
+								a.social-link(href='#')
+									img.social-icon(src='/images/twitter_white.png')
+									span.social-button Share on Twitter
+							li.social.whatsapp
+								a.social-link(href='#')
+									img.social-icon(src='/images/whatsup_white.png')
+									span.social-button Share on Whatsapp
+						.post
+							.post-text
+								if data.post.image.exists
+									.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
+								!= data.post.content.full
+						ul.blog-tags
+							li.tag
+								a.tag-name(href='#') Design
+							li.tag
+								a.tag-name(href='#') Branding
+							li.tag
+								a.tag-name(href='#') Art
+						.comment-block
+							h4.comment-title 2 Comments
+							.insert-comment
+								.data-sector.for-comment
+									img.author-photo(src='/images/author-photo.png')
+								.comment-data
+									span.comment.name John Doe
+									span.comment.separator
+									span.comment.status Right now
+								form.comment-input(action="post.js" method="POST" name="comment-title")
+									textarea.comment-input(name="text", cols="30", rows="10")
+									input.comment-submit(type="submit" name="submit" value="Post")
+							.last-comment
+								.data-sector.for-comment
+									img.author-photo(src='/images/author-photo.png')
+								.comment-data
+									span.comment.name John Doe
+									span.comment.separator
+									span.comment.status 12/04/2020 at 12:45
+								p.comment-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni asperiores magnam quam error vel, eveniet enim pariatur dolorum obcaecati illum.
+								.comment-navigation
+									.arrow.previous
+									span.navigation.horizon-separator |
+									.arrow.next
+									a.navigation.reply(href='#') Reply
+									a.navigation.share-button(href='#') Share
+							.last-comment.before-comment
+								.data-sector.for-comment
+									img.author-photo(src='/images/author-photo.png')
+								.comment-data
+									span.comment.name John Doe
+									span.comment.separator
+									span.comment.status 12/04/2020 at 12:45
+								p.comment-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni asperiores magnam quam error vel, eveniet enim pariatur dolorum obcaecati illum.
+								.comment-navigation
+									.arrow.previous
+									span.navigation.horizon-separator |
+									.arrow.next
+									a.navigation.reply(href='#') Reply
+									a.navigation.share-button(href='#') Share
+									
+							
+
+
+						
+					include ../views/components/navigation
+	include ../views/components/footer
